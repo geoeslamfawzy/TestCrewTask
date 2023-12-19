@@ -14,7 +14,7 @@ public final class DriverActions extends BrowserFactory {
     public static void quitDriver() {
         if (Objects.nonNull(DriverManager.getDriver())) {
             DriverManager.getDriver().quit();
-            DriverManager.unload(); //clean after quit the driver
+            DriverManager.unload();
         }
     }
     public static void initDriver() throws Exception {

@@ -106,25 +106,18 @@
             <version>1.1.1</version>
         </dependency>
 
-        <!-- Cucumber Dependencies -->
+        <!-- Cucumber dependencies -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>6.9.1</version>
-            <scope>test</scope>
+            <version>7.1.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>6.9.1</version>
-            <scope>test</scope>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.1.0</version>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-core</artifactId>
-            <version>6.9.1</version>
-            <scope>test</scope>
-        </dependency>
+
 
     </dependencies>
 

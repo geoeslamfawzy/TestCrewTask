@@ -1,23 +1,24 @@
 package tests;
 
 import driver.DriverActions;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import org.testng.annotations.*;
 
-import java.io.IOException;
 
-public class BaseTest{
-    protected BaseTest(){}
+public class BaseTest extends AbstractTestNGCucumberTests {
+    //protected BaseTest(){}
 
-    WebDriver driver;
-    @BeforeMethod
+    //@Before
+    @BeforeSuite
     protected void setUp() throws Exception {
         System.out.println(Thread.currentThread().getId());
         DriverActions.initDriver();
     }
-    @AfterMethod
-    protected void tearDown(){
+
+    @AfterSuite
+    protected void tearDown() {
         System.out.println(Thread.currentThread().getId());
         DriverActions.quitDriver();
     }

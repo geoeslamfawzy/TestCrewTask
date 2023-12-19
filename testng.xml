@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test parallel="methods" thread-count="5" name="D:/ITI/Automation/Projects/FrameworknnnnDesign">
         <classes>
-            <class name="tests.StcSubscriptionsInfo"/>
+            <class name="tests.StcSubscriptions"/>
         </classes>
     </test>
 </suite>

@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 public class SubscriptionHomePage {
     UIActions ui = new UIActions();
     private final By countryName = By.id("country-name");
+    public final By pageTitle = By.xpath("//h2[@class ='mobile-hidden']");
     private final By saudiChoice = By.xpath("//a[@id='sa']");
     private final By bahrainChoice = By.xpath("//a[@id='bh']");
     private final By kuwaitChoice = By.xpath("//a[@id='kw']");
@@ -24,7 +25,9 @@ public class SubscriptionHomePage {
     private final By premiumPackage = By.id("name-premium");
     private final By premiumPrice = By.xpath("//div[@id='currency-premium']/b");
     private final By premiumCurrency = By.xpath("//div[@id='currency-premium']/i");
-
+    public String getCountryName(){
+        return ui.getText(countryName, WaitStrategy.VISIBLE);
+    }
     public String getLitePackage() {
         return ui.getText(litePackage, WaitStrategy.PRESENCE);
     }
@@ -105,7 +108,7 @@ public class SubscriptionHomePage {
             default:
         }
     }
-    public void ValidateCountryName(Country country){
+    public void validateCountryName(Country country){
         ui.validateText(ui.getText(countryName, WaitStrategy.VISIBLE).toLowerCase(), country.toString().toLowerCase());
     }
     public void changeCountry(Country country){
@@ -121,6 +124,9 @@ public class SubscriptionHomePage {
                 ui.clickOn(kuwaitChoice, WaitStrategy.ClICKABLE);
                 break;
         }
+    }
+    public void validatePageTitle(){
+        ui.validateText(ui.getText(this.pageTitle, WaitStrategy.VISIBLE), "Choose Your Plan");
     }
 
 
